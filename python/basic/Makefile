@@ -1,5 +1,7 @@
+EXTRA_CFLAGS=$(shell python3-config --cflags --ldflags) -lpython3.8 -fPIE
+
 all:
-	gcc $(python3-config --cflags --ldflags) main.c -o main
+	gcc main.c -o main $(EXTRA_CFLAGS)
 
 run:
 	./main
